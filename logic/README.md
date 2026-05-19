@@ -12,3 +12,13 @@ This folder contains mathematical layout and cutting calculations.
 
 - Do not place machine learning code here.
 - Keep functions readable and easy to test.
+
+## Prototype File
+
+- `layout_calculator.py` - calculates normal/rotated grid layout, pieces possible, used area, waste percentage, utilization percentage, and simple guidance.
+
+## Run Check
+
+```bash
+python logic/layout_calculator.py
+```

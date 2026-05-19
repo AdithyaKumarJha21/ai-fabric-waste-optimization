@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabric Waste Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="input-panel">
+      <div>
+        <h1>Fabric Waste Prediction</h1>
+      </div>
+
+      <form id="prediction-form">
+        <label>
+          Fabric Length
+          <input name="Fabric_Length" type="number" step="0.01" min="0.01" value="10" required>
+        </label>
+
+        <label>
+          Fabric Width
+          <input name="Fabric_Width" type="number" step="0.01" min="0.01" value="60" required>
+        </label>
+
+        <label>
+          Piece Length
+          <input name="Piece_Length" type="number" step="0.01" min="0.01" value="1.5" required>
+        </label>
+
+        <label>
+          Piece Width
+          <input name="Piece_Width" type="number" step="0.01" min="0.01" value="18" required>
+        </label>
+
+        <label>
+          Fabric Type
+          <select name="Fabric_Type">
+            <option>Cotton</option>
+            <option>Polyester</option>
+            <option>Denim</option>
+            <option>Silk</option>
+          </select>
+        </label>
+
+        <label>
+          GSM
+          <input name="GSM" type="number" min="1" value="180" required>
+        </label>
+
+        <label>
+          Defect Count
+          <input name="Defect_Count" type="number" min="0" value="2" required>
+        </label>
+
+        <label>
+          Marker Efficiency (%)
+          <input name="Marker_Efficiency" type="number" step="0.01" min="1" max="100" value="86" required>
+        </label>
+
+        <label>
+          Layout Type
+          <select name="Layout_Type">
+            <option>Grid</option>
+            <option>Staggered</option>
+            <option>Rotated</option>
+          </select>
+        </label>
+
+        <button type="submit">Predict Waste</button>
+      </form>
+    </section>
+
+    <section class="result-panel">
+      <h2>Result</h2>
+      <div id="status" class="status">Submit the form to view calculations.</div>
+
+      <div class="metrics">
+        <article>
+          <span>Pieces Possible</span>
+          <strong id="pieces">-</strong>
+        </article>
+        <article>
+          <span>AI Waste</span>
+          <strong id="waste">-</strong>
+        </article>
+        <article>
+          <span>Utilization</span>
+          <strong id="utilization">-</strong>
+        </article>
+        <article>
+          <span>Efficiency</span>
+          <strong id="efficiency">-</strong>
+        </article>
+      </div>
+
+      <div class="details">
+        <p><b>Pieces along length:</b> <span id="length-count">-</span></p>
+        <p><b>Pieces along width:</b> <span id="width-count">-</span></p>
+        <p><b>Logic waste:</b> <span id="logic-waste">-</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
